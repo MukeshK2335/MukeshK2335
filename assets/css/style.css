@@ -357,6 +357,19 @@ main {
   padding: 3px 12px;
   border-radius: 8px;
 }
+.info-content img{
+  height: 100px;
+  margin-left: 45px;
+  margin-bottom: -10px;
+}
+
+
+@media screen and (max-width:1260px) {
+  .info-content img{
+    display: none;
+  }
+  
+}
 .website{
   color: var(--white-1);
   background: var(--onyx);
@@ -365,9 +378,10 @@ main {
   width: max-content;
   padding: 3px 12px;
   border-radius: 8px;
-  margin-left: 65px;
+  margin-left: 72px;
   margin-top: 20px;
 }
+
 .info_more-btn {
   position: absolute;
   top: -15px;
