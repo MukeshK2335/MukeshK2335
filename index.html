@@ -574,49 +574,20 @@
 
         <section class="contact-form">
 
-          <h3 class="h3 form-title">Contact details</h3>
-          <div class="separator"></div>
+          <h3 class="h3 form-title">Contact Form</h3>
 
-          <ul class="contacts-list">
-  
-            <li class="contact-item">
-  
-              <div class="icon-box">
-                <ion-icon name="mail-outline"></ion-icon>
-              </div>
-  
-              <div class="contact-info">
-                <p class="contact-title">Email</p>
-  
-                <a href="mailto:kmukeshkumar2335@gmail.com" class="contact-link">kmukeshkumar2335@gmail.com</a>
-              </div>
-  
-            </li>
-  
-            <li class="contact-item">
-  
-              <div class="icon-box">
-                <ion-icon name="phone-portrait-outline"></ion-icon>
-              </div>
-  
-              <div class="contact-info">
-                <p class="contact-title">Phone</p>
-  
-                <a href="tel:+919345670169" class="contact-link">+91 9345670169</a>
-              </div>
-  
-            </li>
-
-  
-          </ul>
-  
-          
-  
-        </div>
-  
-
+          <form id="email-form" class="form">
+            <div class="input-wrapper">
+              <input type="text" name="fullname" id="fullname" class="form-input" placeholder="Full name" required>
+              <input type="email" name="email" id="email" class="form-input" placeholder="Email address" required>
+            </div>
+            <textarea name="message" id="message" class="form-input" placeholder="Your Message" required></textarea>
+            <button class="form-btn" type="button" onclick="sendEmail()">
+              <ion-icon name="paper-plane"></ion-icon>
+              <span>Send Message</span>
+            </button>
+          </form>
         </section>
-
       </article>
 
     </div>
@@ -638,6 +609,35 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <!-- EmailJS SDK -->  
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+<script type="text/javascript">
+  (function() {
+      emailjs.init("yliBUbGCTKqHGNqhn"); // Replace with your EmailJS user ID
+  })();
+
+  function sendEmail() {
+    const fullName = document.getElementById('fullname').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    const templateParams = {
+      fullname: fullName,
+      email: email,
+      message: message
+    };
+
+    emailjs.send('service_2gccj08', 'template_qls01s8', templateParams)
+      .then(function(response) {
+        console.log('SUCCESS!', response.status, response.text);
+        alert('Email sent successfully!');
+      }, function(error) {
+        console.log('FAILED...', error);
+        alert('Failed to send email.');
+      });
+  }
+</script>
 
 </body>
 
