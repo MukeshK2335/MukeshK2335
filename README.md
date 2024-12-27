@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @MukeshK2335
 - 👀 I’m interested in Full stack and iot 
-- 🌱 I’m currently learning AI for electroics
+- 🌱 I’m currently learning AI for electronics
 - 💞️ I’m looking to collaborate on Iot with AI
 - 📫 How to reach me kmukeshkumar2335@gmail.com
 
